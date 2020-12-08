@@ -15,6 +15,7 @@ const typeDefs = `
 
   type Domain {
     name: String
+    extension: String
     checkout: String
     available: Boolean
   }
@@ -100,6 +101,7 @@ const resolvers = {
         const available = await isDomainAvailable(`${url}${extension}`);
         domains.push({
           name,
+          extension,
           checkout,
           available
         });
